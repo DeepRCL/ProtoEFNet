@@ -32,7 +32,7 @@ python -c "import torch; print(torch.version.cuda)"
 The full list of python packages can be seen in `requirements.txt`.
 
 ## Train and Evaluation
-The values of the hyperparameters can be found in `src/configs/Insightrnet.yml`. Run the script `train.sh` to train the model. The values of the parameters can be changed as an argument in `main.py`.
+The values of the hyperparameters can be found in `src/configs/config.yml`. Run the script `train.sh` to train the model. The values of the parameters can be changed as an argument in `main.py`.
 
 Run the script below to evaluate the model on test or validation subset:
 ```bash
@@ -44,9 +44,9 @@ python ~/AorticStenosis.XAI_AS/main.py --config_path=CONFIG_YML --run_name=eval 
 * `CONFIG_YML` is the path to the config file with the hyperparameters that the checkpoint is trained with.
 * `CHECKPOINT_PATH` is the path to the model checkpoint.
 * `DATA_TYPE` is either "VAL" or "TEST".
-* `data.test_type` is the test-time temporal augmentation. It can take the values from `["single", "2_clips", "3_clips", "all"]`. In the paper it is set to `TEST_TYPE="all"`, indicating that EF value is the weighted average of EF predictions of multiple clips of a single video.
+* `data.test_type` is the test-time temporal augmentation. It can take the values from `["single", "2_clips", "3_clips", "all"]`. In the paper, it is set to `TEST_TYPE="all"`, indicating that the EF value is the average of EF predictions from multiple clips of a single video.
 
-Run the script `eval.sh` to extract embeddings and prototype vectors, visualise them using PCA, and visualise the activation map of new cases together with the contribution of each prototype.
+Run the script `eval.sh` to extract embeddings and prototype vectors, visualise them using PCA, and visualise the activation map of new cases together with the contribution of each prototype. The samples used to generate figures of the paper can be found in `data/echonet/explain.csv`.
 
 ## Dataset
 
@@ -74,5 +74,6 @@ TBD
 
 ## TODO
 * add preprocessed csv file of the data.
+* add explain.csv
 * add requirment file of proto env.
 * add link to arxiv.
