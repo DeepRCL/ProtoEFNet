@@ -36,7 +36,8 @@ The values of the hyperparameters can be found in `src/configs/config.yml`. Run 
 
 Run the script below to evaluate the model on test or validation subset:
 ```bash
-python ~/AorticStenosis.XAI_AS/main.py --config_path=CONFIG_YML --run_name=eval --save_dir="/results" \       --eval_only=True --eval_data_type=DATA_TYPE \
+python ~/AorticStenosis.XAI_AS/main.py --config_path=CONFIG_YML --run_name=eval --save_dir="/results" \
+        --eval_only=True --eval_data_type=DATA_TYPE \
         --model.checkpoint_path=CHECKPOINT_PATH \
         --data.test_type=TEST_TYPE --wandb_mode="online"
 ```
