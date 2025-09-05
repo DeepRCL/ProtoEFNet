@@ -73,7 +73,4 @@ TBD
 ```
 
 ## TODO
-* add preprocessed csv file of the data.
-* add explain.csv
-* add requirment file of proto env.
 * add link to arxiv.
