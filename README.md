@@ -29,7 +29,7 @@ pip install -e .
 python -c "import torch; print(torch.__version__)"
 python -c "import torch; print(torch.version.cuda)"
 ```
-The full list of python packages can be seen in `requirements.txt`.  <todo>
+The full list of python packages can be seen in `requirements.txt`.
 
 ## Train and Evaluation
 The values of the hyperparameters can be found in `src/configs/Insightrnet.yml`. Run the script `train.sh` to train the model. The values of the parameters can be changed as an argument in `main.py`.
@@ -75,3 +75,4 @@ TBD
 ## TODO
 * add preprocessed csv file of the data.
 * add requirment file of proto env.
+* add link to arxiv.
