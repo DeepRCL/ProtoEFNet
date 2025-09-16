@@ -1,0 +1,56 @@
+################### Experiment information ######################
+method: random
+entity: "rcl_stroke"
+project: "ProtoEF"
+name: "Sweep-ProtoEFNet"
+description: Sweeping ProtoEF model tracking R2
+
+metric: 
+  goal: maximize
+  name: epoch/VAL/R2
+
+################## Training information ##########################
+parameters:
+  train: 
+    parameters:
+      criterion:
+        parameters:
+          ClusterRoiReg:
+            parameters:
+              loss_weight: 
+                values: [0, 10]
+              delta: 
+                values: [1, 3, 5.0, 7, 10]
+              kmin:
+                values: [1, 3, 5]
+          PSDRoiFeat:
+            parameters:
+              loss_weight: 
+                values: [0, 30]
+          ProtoDecorelation:
+            parameters:
+              loss_weight: 
+                values: [0, 0.1]
+              delta: 
+                values: [1, 2.5, 5.0, 7.5, 10]
+              kmin: 
+                values: [1, 2, 5]
+
+#################### Model information #################
+  model:
+    parameters:
+      prototype_shape:
+        values: 
+        - (10, 256, 1, 1, 1)
+        - (20, 256, 1, 1, 1)
+        - (40, 256, 1, 1, 1)
+        - (60, 256, 1, 1, 1)
+        - (80, 256, 1, 1, 1)
+      tau:
+        values: [0.2, 0.4, 0.6, 0.8, 1.0]
+  
+#################### Data information #######################
+  data: 
+    parameters:
+      sample_period: 
+        values: [1, 2, 3, 4, 5]
