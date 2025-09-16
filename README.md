@@ -54,6 +54,10 @@ Run the script `eval.sh` to extract embeddings and prototype vectors, visualise 
 We used EchoNet-Dynamic Dataset to train and evaluate our model. The preprocessed data can be found in `data/echonet/data.csv`. The link to the dataset can be seen below:
 EchoNet-Dynamic ([https://aimi.stanford.edu/datasets/echonet-dynamic-cardiac-ultrasound](https://aimi.stanford.edu/datasets/echonet-dynamic-cardiac-ultrasound))
 
+## Hyperparameter settings
+
+We performed a comprehensive hyperparameter tuning on the following: cluster loss weight, delta and kmin; PSD loss weight; PAS loss weight, delta and kmin; number of prototypes; tau and data sampling period. The optimal values are reported in the paper. The in depth hyperparameter testing values can be found in src/configs/sweep_config.yml
+
 ## Acknowledgement
 
 Some code is borrowed from [ProtoPNet](https://github.com/cfchen-duke/ProtoPNet) and [ProtoASNet](https://github.com/hooman007/ProtoASNet). 
