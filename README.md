@@ -1,7 +1,7 @@
 ## ProtoEFNet: Dynamic Prototype Learning for Inherently Interpretable Ejection Fraction Estimation in Echocardiography
 
 This is the official repository of the paper ProtoEFNet: Dynamic Prototype Learning for Inherently Interpretable Ejection Fraction Estimation in Echocardiography accepted to IMIMIC Workshop MICCAI 2025.
-[arXiv]([https://pages.github.com/](https://arxiv.org/abs/2512.03339))
+[arXiv](https://arxiv.org/abs/2512.03339)
 
 ## Abstract
 
